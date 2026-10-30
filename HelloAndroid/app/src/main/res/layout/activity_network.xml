@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="任务7 网络请求与 JSON 解析"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="后端地址：http://10.0.2.2:8080/api/users"
+        android:textColor="#888888"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btn_get_orgjson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="GET 请求 + org.json 解析" />
+
+    <Button
+        android:id="@+id/btn_get_gson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GET 请求 + Gson 解析" />
+
+    <Button
+        android:id="@+id/btn_post_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="POST 提交 JSON（新增用户）" />
+
+    <TextView
+        android:id="@+id/tv_network_result"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_weight="1"
+        android:background="#EEEEEE"
+        android:padding="8dp"
+        android:text="点击上方按钮发起请求"
+        android:textSize="13sp" />
+
+</LinearLayout>
