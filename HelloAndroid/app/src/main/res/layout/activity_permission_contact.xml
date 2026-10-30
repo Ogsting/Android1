@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="任务6 运行时权限与内容提供器"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_read_contacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="申请 READ_CONTACTS 并读取系统通讯录" />
+
+    <Button
+        android:id="@+id/btn_query_provider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="通过 ContentResolver 查询自定义 Provider" />
+
+    <TextView
+        android:id="@+id/tv_permission_result"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_weight="1"
+        android:background="#EEEEEE"
+        android:padding="8dp"
+        android:text="结果将显示在这里"
+        android:textSize="13sp" />
+
+</LinearLayout>
