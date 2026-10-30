@@ -50,11 +50,16 @@ mysql -u root -p --default-character-set=utf8mb4 < AndroidLabServer\sql\init.sql
 
 ### 2. 启动后端
 
+数据库口令通过环境变量注入，不写进仓库配置文件：
+
 ```bat
 cd AndroidLabServer
 mvn -DskipTests package
+set MYSQL_PASSWORD=你的MySQL口令
 java -jar target\android-lab-server-1.0.0.jar
 ```
+
+PowerShell 写法：`$env:MYSQL_PASSWORD="你的口令"; java -jar target\android-lab-server-1.0.0.jar`
 
 启动后监听 `http://localhost:8080`，接口清单：
 

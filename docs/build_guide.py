@@ -73,8 +73,9 @@ h2(doc, "步骤 2：启动后端并自测")
 code_block(doc,
            'cd AndroidLabServer\n'
            'mvn -DskipTests package\n'
+           'set MYSQL_PASSWORD=你的MySQL口令\n'
            'java -jar target\\android-lab-server-1.0.0.jar',
-           caption="编译并启动 Spring Boot 后端")
+           caption="编译并启动 Spring Boot 后端（口令走环境变量，不写进配置文件）")
 para(doc, "看到 Started LabServerApplication 即成功，端口 8080。再开一个命令行自测：")
 code_block(doc,
            'curl http://localhost:8080/api/users\n'
