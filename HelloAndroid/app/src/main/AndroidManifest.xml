@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- ===== 任务 7 / 9：网络 ===== -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- ===== 任务 6：运行时权限 ===== -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <!-- ===== 任务 8：定位与多媒体 ===== -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@android:drawable/sym_def_app_icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HelloAndroid"
+        android:usesCleartextTraffic="true">
+        <!-- usesCleartextTraffic：Android 9.0+ 默认禁止明文 HTTP，
+             联调本机 Spring 后端（http://10.0.2.2:8080）必须放开，生产环境应改用 HTTPS -->
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 任务 2 -->
+        <activity android:name=".task2.FirstActivity" android:exported="false" />
+        <activity
+            android:name=".task2.SecondActivity"
+            android:exported="false"
+            android:launchMode="standard" />
+        <!-- launchMode 依次改为 standard / singleTop / singleTask / singleInstance 做对比实验 -->
+
+        <!-- 任务 3 -->
+        <activity android:name=".task3.LoginActivity" android:exported="false" />
+        <activity android:name=".task3.ContactListActivity" android:exported="false" />
+        <activity android:name=".task3.ChatActivity" android:exported="false" />
+
+        <!-- 任务 4：静态注册的广播接收器 -->
+        <receiver
+            android:name=".broadcast.MyBroadcastReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.helloandroid.CUSTOM_BROADCAST" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 有序广播接收器：priority 越大越先收到 -->
+        <receiver
+            android:name=".broadcast.OrderedReceiverA"
+            android:exported="false">
+            <intent-filter android:priority="100">
+                <action android:name="com.example.helloandroid.ORDERED_BROADCAST" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".broadcast.OrderedReceiverB"
+            android:exported="false">
+            <intent-filter android:priority="50">
+                <action android:name="com.example.helloandroid.ORDERED_BROADCAST" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".broadcast.BroadcastActivity" android:exported="false" />
+
+        <!-- 任务 5 -->
+        <activity android:name=".storage.StorageActivity" android:exported="false" />
+        <activity android:name=".db.DbContactActivity" android:exported="false" />
+
+        <!-- 任务 6 -->
+        <activity android:name=".permission.PermissionContactActivity" android:exported="false" />
+
+        <!-- 任务 6-3：自定义 ContentProvider，exported=true 允许其他 App 访问 -->
+        <provider
+            android:name=".permission.ContactProvider"
+            android:authorities="com.example.helloandroid.provider"
+            android:exported="true" />
+
+        <!-- 任务 7 -->
+        <activity android:name=".network.NetworkActivity" android:exported="false" />
+
+        <!-- 任务 8 -->
+        <service android:name=".service.MyService" android:exported="false" />
+        <activity android:name=".service.ServiceActivity" android:exported="false" />
+        <activity android:name=".service.MediaActivity" android:exported="false" />
+
+        <!-- 任务 9 -->
+        <activity android:name=".emp.EmpListActivity" android:exported="false" />
+
+    </application>
+
+</manifest>

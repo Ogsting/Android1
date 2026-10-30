@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 任务 1 主界面：Log 验证结果 + 9 个任务的导航入口 -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AI 赋能 Android 原生开发综合实验"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#303F9F" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="任务1：环境搭建与 Log 调试（五级日志已输出，请在 Logcat 查看）"
+            android:textSize="13sp"
+            android:textColor="#666666" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="任务导航"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_task1"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="任务1 环境与 Log 输出" />
+
+        <Button
+            android:id="@+id/btn_task2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="任务2 Activity 生命周期与 Intent" />
+
+        <Button
+            android:id="@+id/btn_task3_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="任务3-1 四种布局与常用控件（登录页）" />
+
+        <Button
+            android:id="@+id/btn_task3_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="任务3-2 RecyclerView 联系人列表" />
+
+        <Button
+            android:id="@+id/btn_task3_chat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="任务3-3 简易聊天室界面" />
+
+        <Button
+            android:id="@+id/btn_task4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="任务4 广播机制" />
+
+        <Button
+            android:id="@+id/btn_task5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="任务5-1 文件存储与 SharedPreferences" />
+
+        <Button
+            android:id="@+id/btn_task5_db"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="任务5-2 SQLite 通讯录" />
+
+        <Button
+            android:id="@+id/btn_task6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="任务6 运行时权限与内容提供器" />
+
+        <Button
+            android:id="@+id/btn_task7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="任务7 网络请求与 JSON 解析" />
+
+        <Button
+            android:id="@+id/btn_task8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="任务8-1 Service 生命周期" />
+
+        <Button
+            android:id="@+id/btn_task8_media"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="任务8-2 定位与多媒体" />
+
+        <Button
+            android:id="@+id/btn_task9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="任务9 Android 与 SpringMVC 整合" />
+
+    </LinearLayout>
+
+</ScrollView>
