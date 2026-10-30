@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="任务4 广播机制"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_broadcast_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="#EEEEEE"
+        android:minHeight="80dp"
+        android:padding="8dp"
+        android:text="等待广播事件…（可在模拟器中开关飞行模式观察网络广播）"
+        android:textSize="13sp" />
+
+    <Button
+        android:id="@+id/btn_send_custom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="发送自定义广播（静态注册接收）" />
+
+    <Button
+        android:id="@+id/btn_send_ordered"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发送有序广播 A(100) → B(50)" />
+
+</LinearLayout>
