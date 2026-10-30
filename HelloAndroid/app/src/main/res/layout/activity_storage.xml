@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="任务5-1 文件存储与 SharedPreferences"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/et_storage_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="输入要保存的内容"
+        android:inputType="textMultiLine"
+        android:minLines="2" />
+
+    <Button
+        android:id="@+id/btn_write_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="写文件 openFileOutput" />
+
+    <Button
+        android:id="@+id/btn_read_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="读文件 openFileInput" />
+
+    <Button
+        android:id="@+id/btn_sp_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SharedPreferences 保存（记住密码）" />
+
+    <Button
+        android:id="@+id/btn_sp_read"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SharedPreferences 读取" />
+
+    <Button
+        android:id="@+id/btn_sp_clear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="清空 SharedPreferences" />
+
+    <TextView
+        android:id="@+id/tv_storage_output"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_weight="1"
+        android:background="#EEEEEE"
+        android:padding="8dp"
+        android:text="读取结果将显示在这里"
+        android:textSize="13sp" />
+
+</LinearLayout>
