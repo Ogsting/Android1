@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.lab.mapper.EmpMapper">
+
+    <select id="findPage" resultType="com.example.lab.entity.Emp">
+        SELECT emp_id, emp_name, gender, dept, post, salary, hire_date, status
+        FROM emp
+        ORDER BY emp_id ASC
+        LIMIT #{size} OFFSET #{offset}
+    </select>
+
+    <select id="count" resultType="long">
+        SELECT COUNT(*) FROM emp
+    </select>
+
+    <select id="findById" resultType="com.example.lab.entity.Emp">
+        SELECT emp_id, emp_name, gender, dept, post, salary, hire_date, status
+        FROM emp
+        WHERE emp_id = #{empId}
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="empId"
+            parameterType="com.example.lab.entity.Emp">
+        INSERT INTO emp (emp_name, gender, dept, post, salary, hire_date, status)
+        VALUES (#{empName}, #{gender}, #{dept}, #{post}, #{salary}, #{hireDate}, #{status})
+    </insert>
+
+    <!-- 动态 SQL：只更新前端传了值的字段 -->
+    <update id="update" parameterType="com.example.lab.entity.Emp">
+        UPDATE emp
+        <set>
+            <if test="empName != null and empName != ''">emp_name = #{empName},</if>
+            <if test="gender != null and gender != ''">gender = #{gender},</if>
+            <if test="dept != null and dept != ''">dept = #{dept},</if>
+            <if test="post != null and post != ''">post = #{post},</if>
+            <if test="salary != null">salary = #{salary},</if>
+            <if test="hireDate != null">hire_date = #{hireDate},</if>
+            <if test="status != null">status = #{status},</if>
+        </set>
+        WHERE emp_id = #{empId}
+    </update>
+
+    <delete id="deleteById">
+        DELETE FROM emp WHERE emp_id = #{empId}
+    </delete>
+
+</mapper>

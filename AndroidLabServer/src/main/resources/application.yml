@@ -1,0 +1,32 @@
+server:
+  port: 8080
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+
+spring:
+  application:
+    name: android-lab-server
+  datasource:
+    # 实验专用库 android_lab，结构与先修课 ssm_emp.emp 保持一致
+    url: jdbc:mysql://localhost:3306/android_lab?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: wsyzwdcjdsg
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  # 显式指定 XML 映射文件位置。
+  # 不写这一项时 MyBatis 不会扫描 resources/mapper 下的 XML，
+  # 运行期会抛出 Invalid bound statement (not found)。
+  mapper-locations: classpath*:/mapper/**/*.xml
+  # 下划线列名自动映射为驼峰属性：emp_name -> empName
+  configuration:
+    map-underscore-to-camel-case: true
+    # 在控制台打印 SQL，便于联调排查
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: com.example.lab.entity
+
+logging:
+  level:
+    com.example.lab: debug

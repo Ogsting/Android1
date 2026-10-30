@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.lab.mapper.UserMapper">
+
+    <select id="findAll" resultType="com.example.lab.entity.User">
+        SELECT id, username, nickname, age, email
+        FROM t_user
+        ORDER BY id ASC
+    </select>
+
+    <select id="findById" resultType="com.example.lab.entity.User">
+        SELECT id, username, nickname, age, email
+        FROM t_user
+        WHERE id = #{id}
+    </select>
+
+    <!-- useGeneratedKeys 把自增主键回填到实体 id 上 -->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO t_user (username, nickname, age, email)
+        VALUES (#{username}, #{nickname}, #{age}, #{email})
+    </insert>
+
+</mapper>
